@@ -8,9 +8,12 @@ public class Album extends TrackList {
     public Album(String artistName, String albumName, ArrayList<AudioFile> trackList) throws IllegalArgumentException {
         super(trackList);
 
-        if (trackList.isEmpty()) {
+        if (albumName.isEmpty())
+            throw new IllegalArgumentException("Название альбома не должно быть пустым");
+        if (artistName.isEmpty())
+            throw new IllegalArgumentException("Имя артиста не должно быть пустым");
+        if (trackList.isEmpty())
             throw new IllegalArgumentException("Список треков в альбоме не должен быть пустым");
-        }
 
         this.artistName = artistName;
         this.albumName = albumName;
