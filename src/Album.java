@@ -41,12 +41,12 @@ public class Album extends TrackList {
     }
 
     // методы
-    public void PrintInfoShort() {
-        System.out.println(GetAlbumInfo());
-    }
-
-    public void PrintInfoLong() {
+    @Override
+    public void Print() {
         System.out.println(GetAlbumInfo() + ": ");
-        super.PrintTrackList();
+        super.Print();
+    }
+    public void PrintShort() {
+        System.out.println(GetAlbumInfo());
     }
 }

@@ -41,7 +41,7 @@ class TrackList {
     }
 
     // методы
-    public void PrintTrackList() {
+    public void Print() {
         for (AudioFile track : trackList) {
             track.PrintInfoShort();
         }

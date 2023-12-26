@@ -32,7 +32,18 @@ public class Playlist extends TrackList {
 		return playlistName;
 	}
 
+	public String GetPlaylistInfo() {
+		return "Плейлист \"" + playlistName + "\", " + trackList.size() + " треков";
+	}
+
 	// методы
+	@Override
+	public void Print() {
+		System.out.println(GetPlaylistInfo() + ": ");
+		for (AudioFile track : trackList) {
+			track.PrintInfoShort();
+		}
+	}
 	public void PrintInfo() {
 		System.out.println("Название плейлиста: " + playlistName + ", количество треков: " + trackList.size());
 	}
