@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 class AudioCollection extends TrackList {
 	// конструкторы
-	public AudioCollection(ArrayList<AudioFile> tracks) {
-		super(tracks);
+	public AudioCollection(ArrayList<AudioFile> trackList) {
+		super(trackList);
 	}
 
-	public AudioCollection(AudioFile... tracks) {
+	public AudioCollection(AudioFile... trackList) {
 		super();
-		for (AudioFile track : tracks) {
+		for (AudioFile track : trackList) {
 			super.AddTrack(track);
 		}
 	}
@@ -64,7 +64,7 @@ class AudioCollection extends TrackList {
 			fullDuration += track.GetDuration();
 		}
 
-		double averageDuration = fullDuration / tracksCount; // средняя длительность
+		double averageDuration = (double) fullDuration / tracksCount; // средняя длительность
 
 		System.out.println("Статистика коллекции: ");
 		System.out.println("Количество треков: " + tracksCount);

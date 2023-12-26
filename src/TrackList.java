@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TrackList extends DisplayItem {
+public class TrackList implements DisplayItem {
     protected ArrayList<AudioFile> trackList = new ArrayList<>();
 
     // конструкторы
@@ -53,7 +53,6 @@ public class TrackList extends DisplayItem {
         return trackList.contains(track);
     }
 
-    @Override
     public void Display() {
         for (AudioFile track : trackList) {
             track.PrintInfoShort();

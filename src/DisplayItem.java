@@ -1,3 +1,3 @@
-public abstract class DisplayItem {
-    public abstract void Display();
+public interface DisplayItem {
+    void Display();
 }

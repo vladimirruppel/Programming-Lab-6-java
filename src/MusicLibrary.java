@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class MusicLibrary extends DisplayItem {
+public class MusicLibrary implements DisplayItem {
 	private ArrayList<AudioFile> tracks = new ArrayList<AudioFile>();
 	private ArrayList<Playlist> playlists = new ArrayList<Playlist>();
 	Scanner scanner = new Scanner(System.in);
