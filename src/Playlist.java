@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Playlist extends TrackList {
+public class Playlist extends TrackList {
 	private String playlistName;
 
 	// конструкторы
