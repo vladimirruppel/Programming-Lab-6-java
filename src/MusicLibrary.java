@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-class MusicLibrary {
+public class MusicLibrary extends DisplayItem {
 	private ArrayList<AudioFile> tracks = new ArrayList<AudioFile>();
 	private ArrayList<Playlist> playlists = new ArrayList<Playlist>();
 	Scanner scanner = new Scanner(System.in);
@@ -138,7 +138,7 @@ class MusicLibrary {
 					System.out.println("Нет треков в библиотеке");
 				} 
 				else {
-					PrintTracks();
+					DisplayTracks();
 
 					int trackNumber;
 					do {
@@ -177,12 +177,21 @@ class MusicLibrary {
 		return playlist;
 	} 
 
-	public void PrintTracks() {
+	@Override
+	public void Display() {
+		System.out.println("В музыкальной бибилотеке такие треки: ");
+		DisplayTracks();
+
+		System.out.println("В музыкальной бибилотеке такие плейлисты: ");
+		DisplayPlaylists();
+	}
+
+	public void DisplayTracks() {
 		AudioFile.PrintArray(tracks, true);
 	}
 
-	public void PrintPlaylists() {
-		Playlist.PrintArray(playlists);
+	public void DisplayPlaylists() {
+		Playlist.DisplayArray(playlists);
 	}
 
 	public void CloseScanner() {

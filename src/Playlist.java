@@ -38,20 +38,20 @@ public class Playlist extends TrackList {
 
 	// методы
 	@Override
-	public void Print() {
+	public void Display() {
 		System.out.println(GetPlaylistInfo() + ": ");
 		for (AudioFile track : trackList) {
 			track.PrintInfoShort();
 		}
 	}
-	public void PrintInfo() {
+	public void DisplayInfo() {
 		System.out.println("Название плейлиста: " + playlistName + ", количество треков: " + trackList.size());
 	}
 
-	public static void PrintArray(ArrayList<Playlist> playlists) {
+	public static void DisplayArray(ArrayList<Playlist> playlists) {
 		System.out.println("Список плейлистов: ");
 		for (Playlist playlist : playlists) {
-			playlist.PrintInfo();
+			playlist.DisplayInfo();
 		}
 	}
 }

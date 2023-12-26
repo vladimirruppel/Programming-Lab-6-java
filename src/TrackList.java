@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TrackList {
+public class TrackList extends DisplayItem {
     protected ArrayList<AudioFile> trackList = new ArrayList<>();
 
     // конструкторы
@@ -41,12 +41,6 @@ public class TrackList {
     }
 
     // методы
-    public void Print() {
-        for (AudioFile track : trackList) {
-            track.PrintInfoShort();
-        }
-    }
-
     public void AddTrack(AudioFile track) {
         trackList.add(track);
     }
@@ -57,5 +51,12 @@ public class TrackList {
 
     public boolean Contains(AudioFile track) {
         return trackList.contains(track);
+    }
+
+    @Override
+    public void Display() {
+        for (AudioFile track : trackList) {
+            track.PrintInfoShort();
+        }
     }
 }

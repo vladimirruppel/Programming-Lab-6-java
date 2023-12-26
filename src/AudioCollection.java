@@ -37,7 +37,7 @@ class AudioCollection extends TrackList {
 		return results;
 	}
 
-	public void PrintSearchResults(ArrayList<AudioFile> results) {
+	public void DisplaySearchResults(ArrayList<AudioFile> results) {
 		System.out.println("Результаты по запросу: ");
 		for (AudioFile track : results) {
 			track.PrintInfoShort();
@@ -45,14 +45,14 @@ class AudioCollection extends TrackList {
 	}
 
 	public void SearchAndPrintByArtistName(String artistName) {
-		PrintSearchResults(SearchByArtistName(artistName));
+		DisplaySearchResults(SearchByArtistName(artistName));
 	}
 
 	public void SearchAndPrintByReleaseYear(int releaseYear) {
-		PrintSearchResults(SearchByReleaseYear(releaseYear));
+		DisplaySearchResults(SearchByReleaseYear(releaseYear));
 	}
 
-	public void PrintStats() {
+	public void DisplayStats() {
 		int tracksCount = trackList.size(); // кол-во треков в массиве
 		if (tracksCount == 0) {
 			System.out.println("Количество треков в коллекции равно 0");
