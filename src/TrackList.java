@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class TrackList {
+public class TrackList {
     protected ArrayList<AudioFile> trackList = new ArrayList<>();
 
     // конструкторы
