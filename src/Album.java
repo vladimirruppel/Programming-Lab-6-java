@@ -5,7 +5,7 @@ public class Album extends TrackList {
     private String artistName;
 
     // конструкторы
-    public Album(String artistName, String albumName, ArrayList<AudioFile> trackList) {
+    public Album(String artistName, String albumName, ArrayList<AudioFile> trackList) throws IllegalArgumentException {
         super(trackList);
 
         if (trackList.isEmpty()) {
@@ -22,7 +22,7 @@ public class Album extends TrackList {
         this.albumName = albumName;
     }
 
-    public void SetArtistName(String artistName) {
+    public void SetArtistName(String artistName) throws IllegalArgumentException {
         if (artistName.isEmpty()) throw new IllegalArgumentException("Пустое имя артиста недопустимо");
         this.artistName = artistName;
     }
