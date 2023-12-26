@@ -1,32 +1,24 @@
 import java.util.ArrayList;
 
-class AudioCollection {
-	private ArrayList<AudioFile> tracks = new ArrayList<AudioFile>();
-
+class AudioCollection extends TrackList {
 	// конструкторы
 	public AudioCollection(ArrayList<AudioFile> tracks) {
-		this.tracks = tracks;
+		super(tracks);
 	}
 
 	public AudioCollection(AudioFile... tracks) {
+		super();
 		for (AudioFile track : tracks) {
-			this.tracks.add(track);
+			super.AddTrack(track);
 		}
 	}
 
 	// методы
-	public void AddTrack(AudioFile track) {
-		tracks.add(track);
-	}
-
-	public void RemoveTrackByIndex(int index) {
-		tracks.remove(index);
-	}
 
 	public ArrayList<AudioFile> SearchByArtistName(String artistName) {
 		ArrayList<AudioFile> results = new ArrayList<AudioFile>();
 
-		for (AudioFile track : tracks) {
+		for (AudioFile track : trackList) {
 			if (track.GetArtistName() == artistName)
 				results.add(track);
 		}
@@ -37,7 +29,7 @@ class AudioCollection {
 	public ArrayList<AudioFile> SearchByReleaseYear(int releaseYear) {
 		ArrayList<AudioFile> results = new ArrayList<AudioFile>();
 
-		for (AudioFile track : tracks) {
+		for (AudioFile track : trackList) {
 			if (track.GetReleaseYear() == releaseYear)
 				results.add(track);
 		}
@@ -61,14 +53,14 @@ class AudioCollection {
 	}
 
 	public void PrintStats() {
-		int tracksCount = tracks.size(); // кол-во треков в массиве
+		int tracksCount = trackList.size(); // кол-во треков в массиве
 		if (tracksCount == 0) {
 			System.out.println("Количество треков в коллекции равно 0");
 			return;
 		}	
 
 		int fullDuration = 0; // длительность всех треков в коллекции
-		for (AudioFile track : tracks) {
+		for (AudioFile track : trackList) {
 			fullDuration += track.GetDuration();
 		}
 
