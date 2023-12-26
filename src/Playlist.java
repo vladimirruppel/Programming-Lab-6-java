@@ -34,7 +34,7 @@ public class Playlist extends TrackList {
 
 	// методы
 	public void PrintInfo() {
-		System.out.println("Название плейлиста: " + playlistName + ", количество треков: " + super.GetSize());
+		System.out.println("Название плейлиста: " + playlistName + ", количество треков: " + trackList.size());
 	}
 
 	public static void PrintArray(ArrayList<Playlist> playlists) {

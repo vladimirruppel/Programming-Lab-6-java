@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 class TrackList {
-    private ArrayList<AudioFile> trackList = new ArrayList<>();
+    protected ArrayList<AudioFile> trackList = new ArrayList<>();
 
     // конструкторы
     public TrackList() { }

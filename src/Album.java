@@ -37,7 +37,7 @@ public class Album extends TrackList {
     }
 
     public String GetAlbumInfo() {
-        return artistName + " - " + albumName + ", " + super.GetSize() + " треков";
+        return artistName + " - " + albumName + ", " + trackList.size() + " треков";
     }
 
     // методы
