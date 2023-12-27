@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class AudioFile {
+public class AudioFile implements Cloneable {
 	private String fileName;
 	private String artistName;
 	private String trackName;
@@ -98,5 +98,9 @@ public class AudioFile {
 			if (numbered) System.out.print((i + 1) + ". ");
 			track.PrintInfoShort();
 		}
+	}
+
+	public AudioFile clone() throws CloneNotSupportedException {
+		return (AudioFile)super.clone();
 	}
 }

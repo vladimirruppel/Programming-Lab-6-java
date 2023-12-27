@@ -16,10 +16,23 @@ public class Main {
 
         MusicLibrary musicLibrary = new MusicLibrary(audioFile);
 
+        System.out.println("Использование шаблона класса: ");
         DisplayParent<Album> albumDisplayParent = new DisplayParent<>();
         albumDisplayParent.Display(album);
         DisplayParent<MusicLibrary> musicLibraryDisplayParent = new DisplayParent<>();
         musicLibraryDisplayParent.Display(musicLibrary);
+
+        try {
+            System.out.println("Мелкое и глубокое копирование: ");
+            AudioFile audioFileClone = audioFile.clone();
+            audioFileClone.PrintInfoShort();
+
+            Album albumClone = album.clone();
+            albumClone.DisplayShort();
+        }
+        catch (CloneNotSupportedException e) {
+            System.out.println(e.toString());
+        }
 
     }
 }

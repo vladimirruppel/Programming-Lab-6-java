@@ -1,6 +1,7 @@
+import javax.sound.midi.Track;
 import java.util.ArrayList;
 
-public class TrackList implements DisplayItem {
+public class TrackList implements DisplayItem, Cloneable {
     protected ArrayList<AudioFile> trackList = new ArrayList<>();
 
     // конструкторы
@@ -57,5 +58,10 @@ public class TrackList implements DisplayItem {
         for (AudioFile track : trackList) {
             track.PrintInfoShort();
         }
+    }
+
+    @Override
+    public TrackList clone() throws CloneNotSupportedException {
+        return (TrackList)super.clone();
     }
 }

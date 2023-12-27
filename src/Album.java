@@ -52,4 +52,14 @@ public class Album extends TrackList {
     public void DisplayShort() {
         System.out.println(GetAlbumInfo());
     }
+
+    @Override
+    public Album clone() throws CloneNotSupportedException {
+        Album album = (Album)super.clone();
+        album.trackList = new ArrayList<>();
+        for (AudioFile track : trackList) {
+            album.trackList.add((AudioFile)track.clone());
+        }
+        return album;
+    }
 }
