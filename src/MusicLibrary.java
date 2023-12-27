@@ -179,10 +179,16 @@ public class MusicLibrary implements DisplayItem {
 
 	public void Display() {
 		System.out.println("В музыкальной бибилотеке такие треки: ");
-		DisplayTracks();
+		if (tracks.isEmpty())
+			System.out.println("Треков не обнаружено");
+		else
+			DisplayTracks();
 
 		System.out.println("В музыкальной бибилотеке такие плейлисты: ");
-		DisplayPlaylists();
+		if (playlists.isEmpty())
+			System.out.println("Плейлистов не обнаружено");
+		else
+			DisplayPlaylists();
 	}
 
 	public void DisplayTracks() {
